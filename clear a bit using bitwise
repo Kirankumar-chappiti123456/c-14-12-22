@@ -15,3 +15,24 @@ int main()
     fptr(num,pos);
     
 }
+
+
+
+another way using compliment: "~":
+#include <stdio.h>
+#define M 32
+int fun(int num,int pos)
+{
+  
+  int k=(num&(~(1<<M-1-pos)));
+  printf("%d",k);
+}
+int main()
+{
+    int num,pos;
+    printf("enter the num and pos:");
+    scanf("%d %d",&num,&pos);
+    int (*fptr)(int,int)=fun;
+    fptr(num,pos);
+    
+}
